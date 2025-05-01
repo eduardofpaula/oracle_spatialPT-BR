@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>oracle.spatial</groupId>
-	<artifactId>oracle_spatial_PT-BR</artifactId>
+	<artifactId>oracleDatabase</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>oracleDatabase</name>
 	<description>Studies project for Oracle Spatial</description>
