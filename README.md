@@ -10,6 +10,7 @@ Oracle Spatial é uma opção do Oracle Database que fornece suporte para dados 
 - Oracle Database 19c
 - Oracle SQL Developer 24.3.1.347
 - Java 21
+- Lib [locationtech.jts.geom](https://locationtech.github.io/jts/javadoc/) para criação de objetos SDO_GEOMETRY
 
 # Tipos de dados espaciais suportados
 - Point
