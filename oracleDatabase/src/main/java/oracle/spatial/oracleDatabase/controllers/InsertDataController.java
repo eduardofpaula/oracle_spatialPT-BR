@@ -1,6 +1,7 @@
 package oracle.spatial.oracleDatabase.controllers;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
+import oracle.spatial.oracleDatabase.dtos.LineString.RequestLineStringDTO;
 import oracle.spatial.oracleDatabase.dtos.Point.RequestPointDTO;
 import oracle.spatial.oracleDatabase.dtos.ResponseDefault;
 import oracle.spatial.oracleDatabase.services.InsertDataService;
@@ -24,4 +25,11 @@ public class InsertDataController {
         insertDataService.insertPoint(requestPointDTO);
         return ResponseEntity.ok(new ResponseDefault("Ponto inserido com sucesso"));
     }
+
+    @PostMapping("/linestring")
+    public ResponseEntity<ResponseDefault> insertLinestring(@RequestBody List<RequestLineStringDTO> requestLineStringDTO) {
+        insertDataService.inserirLineString(requestLineStringDTO);
+        return ResponseEntity.ok(new ResponseDefault("Rota inserida com sucesso"));
+    }
+
 }
