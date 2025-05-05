@@ -8,6 +8,7 @@ import javax.sound.sampled.Line;
 @Component
 public class GeometryUtils {
 
+    // metodo para criar ponto
     public static Point createPoint(double latitude, double longitude) {
         if (latitude == 0 || longitude == 0) {
             throw new IllegalArgumentException("Latitude ou Longitude vazios");
@@ -18,6 +19,7 @@ public class GeometryUtils {
         return geometryFactory.createPoint(pointCoordinates);
     }
 
+    // metodo para criar rota
     public static LineString createLineString(double[] longitude, double[] latitude){
         if (longitude == null || latitude == null) {
             throw new IllegalArgumentException("Longitude e latitude não podem ser nulos");
@@ -37,6 +39,7 @@ public class GeometryUtils {
 
     }
 
+    // metodo para criar o objeto polígono para inserir no banco
     public static Polygon createPolygon(double[] longitude, double[] latitude) {
         if (longitude == null || latitude == null) {
             throw new IllegalArgumentException("Longitude e latitude não podem ser nulos");
@@ -53,6 +56,7 @@ public class GeometryUtils {
         int n = longitude.length;
         Coordinate[] coordinates = new Coordinate[n + 1];
 
+        // pega todas as coordenadas e cria o objeto
         for (int i = 0; i < n; i++) {
             if (Double.isNaN(longitude[i]) || Double.isNaN(latitude[i])) {
                 throw new IllegalArgumentException("Coordenadas não podem ser NaN");
