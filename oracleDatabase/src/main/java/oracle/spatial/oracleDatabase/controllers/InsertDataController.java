@@ -3,6 +3,7 @@ package oracle.spatial.oracleDatabase.controllers;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import oracle.spatial.oracleDatabase.dtos.LineString.RequestLineStringDTO;
 import oracle.spatial.oracleDatabase.dtos.Point.RequestPointDTO;
+import oracle.spatial.oracleDatabase.dtos.Polygon.RequestPolygonDTO;
 import oracle.spatial.oracleDatabase.dtos.ResponseDefault;
 import oracle.spatial.oracleDatabase.services.InsertDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,12 @@ public class InsertDataController {
     public ResponseEntity<ResponseDefault> insertLinestring(@RequestBody List<RequestLineStringDTO> requestLineStringDTO) {
         insertDataService.inserirLineString(requestLineStringDTO);
         return ResponseEntity.ok(new ResponseDefault("Rota inserida com sucesso"));
+    }
+
+    @PostMapping("/polygon")
+    public ResponseEntity<ResponseDefault> insertPolygon(@RequestBody List<RequestPolygonDTO> requestPolygonDTO){
+        insertDataService.inserirPolygon(requestPolygonDTO);
+        return ResponseEntity.ok(new ResponseDefault("Poligono inserido com sucesso"));
     }
 
 }
